@@ -1,10 +1,29 @@
+:root {
+  --cor-primaria: #e21;
+  --cor-primaria-escura: #900;
+  --fundo-1: #f7f7f7;
+  --fundo-2: #ffffff;
+  --texto: #000000;
+  --subtitulo: rgba(0, 0, 0, 0.2);
+  --onda: url("../img/onda-clara.svg");
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --fundo-1: #111111;
+    --fundo-2: #000000;
+    --texto: #ffffff;
+    --subtitulo: rgba(255, 255, 255, 0.2);
+    --onda: url("../img/onda-escura.svg");
+  }
+}
 body {
-  background: #f7f7f7;
+  background: var(--fundo-1);
   font-family: Arial, Helvetica, sans-serif;
   display: grid;
   justify-items: center;
   gap: 3.75rem;
   margin-top: 3.75rem;
+  color: var(--texto);
 }
 
 a {
@@ -47,15 +66,15 @@ p {
 
 .menu a {
   display: block;
-  color: #000000;
+  color: var(--texto);
   padding: 1rem 2rem;
   border-radius: 4px;
-  background: #ffffff;
+  background: var(--fundo-2);
   text-transform: uppercase;
   border: 2px solid transparent;
 }
 .menu a:hover {
-  border-color: #e21;
+  border-color: var(--cor-primaria);
 }
 .conteudo {
   display: grid;
@@ -64,7 +83,7 @@ p {
 }
 
 .introducao {
-  background: #ffffff;
+  background: var(--fundo-2);
   text-align: right;
   padding: 3.5rem;
   position: relative;
@@ -82,7 +101,7 @@ p {
   display: inline-block;
   width: 3.75rem;
   height: 0.31rem;
-  background: #e21;
+  background: var(--cor-primaria);
   position: absolute;
   top: 2.5rem;
   right: -2rem;
@@ -91,26 +110,26 @@ p {
 .botao {
   display: inline-block;
   padding: 1rem 2rem;
-  background: #e21;
+  background: var(--cor-primaria);
   color: #ffffff;
   border-radius: 0.32rem;
 }
 .botao:hover {
-  background-color: #900;
+  background-color: var(--cor-primaria-escura);
 }
 
 .subtitulo {
-  color: #c6c6c6;
+  color: var(--subtitulo);
   text-align: right;
   padding: 3.8rem;
   font-size: 3.7rem;
   text-transform: uppercase;
   align-self: center;
-  background-image: url("../img/onda.svg");
+  background-image: var(--onda);
 }
 
 .vantagens {
-  background: #ffffff;
+  background: var(--fundo-2);
   padding: 3.8rem;
 }
 .vantagens-item {
@@ -129,11 +148,11 @@ p {
 }
 
 .vantagens-item:nth-child(odd) {
-  background: #f7f7f7;
+  background: var(--fundo-1);
 }
 
 footer {
-  background: #ffffff;
+  background: var(--fundo-2);
   width: 100%;
   padding-top: 0.6rem;
   text-align: center;
@@ -170,7 +189,6 @@ footer {
 }
 
 @media (min-width: 600px) and (max-width: 800px) {
-
   .vantagens {
     padding: 0;
   }
